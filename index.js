@@ -15,12 +15,15 @@ function invokeAction({ action, id, name, email, phone }) {
         break;
   
       case 'add':
-          console.log(contacts.addContact(name,email,phone))
+        contacts.addContact(name,email,phone)
+          console.log(contacts.listContacts())
+         
         // ... name email phone
         break;
   
       case 'remove':
-          console.log(contacts.removeContact(id))
+        contacts.removeContact(id)
+          console.log(contacts.listContacts())
         // ... id
         break;
   
@@ -28,3 +31,4 @@ function invokeAction({ action, id, name, email, phone }) {
         console.warn('\x1B[31m Unknown action type!');
     }
   }
+  invokeAction(argv);
